@@ -29,13 +29,14 @@ public class Reporter {
                 String product = entry.getKey();
                 ProductSalesData saleData = entry.getValue();
 
-                //System.out.println(text);
+                System.out.println(text);
                 System.out.println(product + " adjustment details: ");
 
                 for(Adjustment adjustment : saleData.getValueAdjustmentHistory()){
                     System.out.println(adjustment.getInfo());
                 }
             }
+        Thread.currentThread().suspend();
     }
 
 

@@ -8,7 +8,7 @@ public class SaleMessageManagement {
     private Reporter reporter;
     private SaleDataManager saleDataManager;
     private HashMap<String, ProductSalesData> productSalesData;
-    private int totalMessgae;
+    private int totalMessagae;
 
     public SaleMessageManagement() {
         this.productSalesData = new HashMap<>();
@@ -24,11 +24,11 @@ public class SaleMessageManagement {
 
                 for(int i = 0 ;i < mesg.getQuantity(); i++){
                     saleDataManager.updateProductSaleData(mesg);
-                    totalMessgae++;
-                    if(totalMessgae == 11){
+                    totalMessagae++;
+                    if(totalMessagae == 10){
                         reporter.reportEveryTenthMessage();
                     }
-                    if(totalMessgae == 11){
+                    if(totalMessagae == 50){
                         reporter.reportFiftyMessageReceived();
                     }
                 }
