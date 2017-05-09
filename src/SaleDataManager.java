@@ -29,9 +29,15 @@ public class SaleDataManager {
         if(message.getAdjustment() != null){
             data.getValueAdjustmentHistory().add(message.getAdjustment());
             switch (message.getAdjustment().getAdjustmentType()){
-                case "add": data.setTotalSaleValue(data.getTotalSaleNumber() * (data.getProductValue() + message.getAdjustment().getValue()));
-                case"subtract": data.setTotalSaleValue(data.getTotalSaleNumber() * (data.getProductValue()) - message.getAdjustment().getValue());
-                case"multiply": data.setTotalSaleValue(data.getTotalSaleNumber() * (data.getProductValue() * message.getAdjustment().getValue()));
+                case "add": data.setTotalSaleValue(data.getTotalSaleNumber() *
+                        (data.getProductValue() + message.getAdjustment().getValue()));
+                    break;
+                case"subtract": data.setTotalSaleValue(data.getTotalSaleNumber() *
+                        (data.getProductValue()) - message.getAdjustment().getValue());
+                    break;
+                case"multiply": data.setTotalSaleValue(data.getTotalSaleNumber() *
+                        (data.getProductValue() * message.getAdjustment().getValue()));
+                    break;
             }
         }
 
